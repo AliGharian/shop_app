@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/pages/home_page.dart';
+import 'package:shop_app/pages/bottom_nav_bar_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: BottomNavBarPage(),
     );
   }
 }
