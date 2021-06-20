@@ -29,7 +29,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       FeedPage(),
       SearchPage(),
       CartPage(),
-      UserPage(),
+      UserInfoPage(),
     ];
     super.initState();
   }
