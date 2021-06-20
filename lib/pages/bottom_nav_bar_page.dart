@@ -3,7 +3,7 @@ import 'package:shop_app/pages/cart_page.dart';
 import 'package:shop_app/pages/feed_page.dart';
 import 'package:shop_app/pages/home_page.dart';
 import 'package:shop_app/pages/search_page.dart';
-import 'package:shop_app/pages/user_page.dart';
+import 'package:shop_app/pages/user_info_page.dart';
 
 class BottomNavBarPage extends StatefulWidget {
   @override
