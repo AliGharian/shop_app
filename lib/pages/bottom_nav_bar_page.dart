@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:shop_app/pages/cart_page.dart';
 import 'package:shop_app/pages/feed_page.dart';
 import 'package:shop_app/pages/home_page.dart';
@@ -53,12 +54,12 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           child: BottomNavigationBar(
             items: [
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(AntDesign.home),
                 label: 'Home',
                 backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.feed),
+                icon: Icon(AntDesign.tago),
                 label: 'Feed',
                 backgroundColor: Colors.green,
               ),
@@ -69,12 +70,12 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
                 backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_cart),
+                icon: Icon(Feather.shopping_bag),
                 label: 'Cart',
                 backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: Icon(AntDesign.user),
                 label: 'User',
                 backgroundColor: Colors.green,
               ),
@@ -99,7 +100,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
         child: Icon(
-          Icons.search,
+          AntDesign.search1,
         ),
         onPressed: () {},
       ),
