@@ -7,7 +7,9 @@ class Styles {
       scaffoldBackgroundColor:
           isDarkTheme ? Colors.black : Colors.grey.shade300,
       primarySwatch: Colors.red, // this is the main color of the app
-      primaryColor: isDarkTheme ? Colors.black : Colors.grey.shade300,
+      primaryColor: isDarkTheme
+          ? Colors.black
+          : Colors.white, //this is the color of the app bar
       accentColor: Colors.deepOrange, // this is the second main color of app
       backgroundColor: isDarkTheme ? Colors.grey.shade700 : Colors.white,
       indicatorColor: isDarkTheme ? Color(0xff0E1D36) : Color(0xffCBDCF8),
@@ -25,7 +27,10 @@ class Styles {
             colorScheme: ColorScheme.dark(),
           ),
       appBarTheme: AppBarTheme(
-        elevation: 2.0,
+        elevation: 1.0,
+      ),
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: Colors.black.withOpacity(0.0),
       ),
     );
   }
