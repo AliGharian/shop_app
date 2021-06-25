@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/consts/theme_data.dart';
 import 'package:shop_app/pages/bottom_nav_bar_page.dart';
 
 void main() {
@@ -11,9 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: Styles.themData(false, context),
       home: BottomNavBarPage(),
     );
   }

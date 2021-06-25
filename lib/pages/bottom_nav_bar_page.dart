@@ -56,28 +56,23 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
               BottomNavigationBarItem(
                 icon: Icon(AntDesign.home),
                 label: 'Home',
-                backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
                 icon: Icon(AntDesign.tago),
                 label: 'Feed',
-                backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
                 activeIcon: null,
                 icon: Icon(null),
                 label: '',
-                backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Feather.shopping_bag),
                 label: 'Cart',
-                backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
                 icon: Icon(AntDesign.user),
                 label: 'User',
-                backgroundColor: Colors.green,
               ),
             ],
             elevation: 5.0,
@@ -87,9 +82,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
             type: BottomNavigationBarType
                 .fixed, //this line remove the motion of items when selected
             // fixedColor: Colors.red,//when selectedItemcolor have a value blow line should be remove
-            selectedItemColor: Colors.orange,
-            backgroundColor: Colors.green,
-            unselectedItemColor: Colors.white,
+            selectedItemColor: Colors.deepOrange,
             currentIndex: _selectedIndex,
             onTap: _onItemTapped,
           ),
@@ -98,7 +91,6 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.purple,
         child: Icon(
           AntDesign.search1,
         ),

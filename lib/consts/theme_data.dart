@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Styles {
   static themData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
+      primaryColorDark: Colors.black,
       scaffoldBackgroundColor:
           isDarkTheme ? Colors.black : Colors.grey.shade300,
       primarySwatch: Colors.red, // this is the main color of the app
@@ -24,7 +25,7 @@ class Styles {
             colorScheme: ColorScheme.dark(),
           ),
       appBarTheme: AppBarTheme(
-        elevation: 0.0,
+        elevation: 2.0,
       ),
     );
   }
