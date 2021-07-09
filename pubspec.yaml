@@ -33,6 +33,9 @@ dependencies:
       url: https://github.com/adarsh-technocrat/flutter-icons.git
       branch: null-safety-migration
   provider: ^5.0.0
+  # shimmer: ^2.0.0
+  carousel_slider: ^4.0.0
+  cached_network_image: ^3.0.0
 
 dev_dependencies:
   flutter_test:
