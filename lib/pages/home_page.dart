@@ -28,6 +28,44 @@ class _HomePageState extends State<HomePage> {
     }
   ];
 
+  var _categoriesItems = [
+    {
+      'title': 'washing',
+      'url':
+          'https://khooger.com/pub/media/Media/Home/Category_Icons/20210608_iconcategory_4_global.png',
+    },
+    {
+      'title': 'furnitures',
+      'url':
+          'https://khooger.com/pub/media/Media/Home/Category_Icons/20210608_iconcategory_6_global.png',
+    },
+    {
+      'title': 'TV',
+      'url':
+          'https://khooger.com/pub/media/Media/Home/Category_Icons/20210608_iconcategory_7_global.png',
+    },
+    {
+      'title': 'library',
+      'url':
+          'https://khooger.com/pub/media/Media/Home/Category_Icons/20210608_iconcategory_8_global.png',
+    },
+    {
+      'title': 'table',
+      'url':
+          'https://khooger.com/pub/media/Media/Home/Category_Icons/20210608_iconcategory_9_global.png',
+    },
+    {
+      'title': 'mattress',
+      'url':
+          'https://khooger.com/pub/media/Media/Home/Category_Icons/20210608_iconcategory_1_global.png',
+    },
+    {
+      'title': 'cooler',
+      'url':
+          'https://khooger.com/pub/media/Media/Home/Category_Icons/20210608_iconcategory_2_global.png',
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,6 +135,47 @@ class _HomePageState extends State<HomePage> {
                   }).toList(),
                 ),
               ],
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8.0),
+              height: 100,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: _categoriesItems.map((e) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.all(2.0),
+                        height: 60.0,
+                        width: 60.0,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: CachedNetworkImage(
+                          imageUrl: e['url'].toString().toUpperCase(),
+                          fit: BoxFit.cover,
+                          errorWidget: (context, url, error) =>
+                              Icon(Icons.error),
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) => Center(
+                            child: CircularProgressIndicator(
+                              value: downloadProgress.progress,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        e['title'].toString().toUpperCase(),
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.0,
+                        ),
+                      ),
+                    ],
+                  );
+                }).toList(),
+              ),
             ),
           ],
         ),
