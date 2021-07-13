@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -63,6 +64,39 @@ class _HomePageState extends State<HomePage> {
       'title': 'cooler',
       'url':
           'https://khooger.com/pub/media/Media/Home/Category_Icons/20210608_iconcategory_2_global.png',
+    },
+  ];
+
+  var _newProductItems = [
+    {
+      'url':
+          'https://khooger.com/pub/media/catalog/product/cache/51cf775e491702027a608ffe8475dfc5/k/1/k10086514_1.jpg',
+      'title': 'chair',
+      'price': '25000'
+    },
+    {
+      'url':
+          'https://khooger.com/pub/media/catalog/product/cache/51cf775e491702027a608ffe8475dfc5/k/1/k10086514_1.jpg',
+      'title': 'chair',
+      'price': '25000'
+    },
+    {
+      'url':
+          'https://khooger.com/pub/media/catalog/product/cache/51cf775e491702027a608ffe8475dfc5/e/e/ee8043a6d40c67c18dc39af06cd0740003995d24_1599393625.jpg',
+      'title': 'chair',
+      'price': '25000'
+    },
+    {
+      'url':
+          'https://khooger.com/pub/media/catalog/product/cache/51cf775e491702027a608ffe8475dfc5/e/e/ee8043a6d40c67c18dc39af06cd0740003995d24_1599393625.jpg',
+      'title': 'chair',
+      'price': '25000'
+    },
+    {
+      'url':
+          'https://khooger.com/pub/media/catalog/product/cache/51cf775e491702027a608ffe8475dfc5/k/1/k10095312.jpg',
+      'title': 'chair',
+      'price': '25000'
     },
   ];
 
@@ -152,17 +186,8 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                         ),
-                        child: CachedNetworkImage(
-                          imageUrl: e['url'].toString().toUpperCase(),
-                          fit: BoxFit.cover,
-                          errorWidget: (context, url, error) =>
-                              Icon(Icons.error),
-                          progressIndicatorBuilder:
-                              (context, url, downloadProgress) => Center(
-                            child: CircularProgressIndicator(
-                              value: downloadProgress.progress,
-                            ),
-                          ),
+                        child: Image(
+                          image: NetworkImage(e['url'].toString()),
                         ),
                       ),
                       Text(
@@ -174,6 +199,81 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   );
+                }).toList(),
+              ),
+            ),
+            Container(
+              height: 200.0,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Colors.deepOrange,
+              ),
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: _newProductItems.map((e) {
+                  int index = _newProductItems.indexOf(e);
+                  if (index != 0) {
+                    return Container(
+                      margin: EdgeInsets.all(8.0),
+                      height: 150.0,
+                      width: 150.0,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(8.0),
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.all(10.0),
+                            height: 120.0,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8.0),
+                              ),
+                            ),
+                            child: CachedNetworkImage(
+                              imageUrl: e['url'].toString(),
+                            ),
+                          ),
+                          Text(
+                            e['title'].toString(),
+                          ),
+                        ],
+                      ),
+                    );
+                  } else {
+                    return Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 8.0),
+                          height: 150.0,
+                          child: CachedNetworkImage(
+                            fit: BoxFit.cover,
+                            imageUrl:
+                                'https://khooger.com/pub/media/Media/Home/Special_Offers/20210608_today_image_desktop.png',
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              'See All',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            Icon(
+                              MaterialIcons.keyboard_arrow_right,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
+                      ],
+                    );
+                  }
                 }).toList(),
               ),
             ),
