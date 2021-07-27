@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/features/login/presentation/widgets/custom_icons.dart';
-import 'package:shop_app/features/login/presentation/widgets/login_text_field.dart';
-import 'package:shop_app/features/login/presentation/widgets/login_with_button.dart';
-import 'package:shop_app/features/login/presentation/widgets/single_line.dart';
+import 'package:shop_app/features/authentication/presentation/widgets/custom_icons.dart';
+import 'package:shop_app/features/authentication/presentation/widgets/login_text_field.dart';
+import 'package:shop_app/features/authentication/presentation/widgets/login_with_button.dart';
+import 'package:shop_app/features/authentication/presentation/widgets/single_line.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -47,15 +47,21 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              LoginTextField(
-                hintTitle: 'Your Email',
-                icon: CustomIcons.email,
-                onChanged: (value) {},
+              Padding(
+                padding: EdgeInsets.only(bottom: 8.0),
+                child: LoginTextField(
+                  hintTitle: 'Your Email',
+                  icon: CustomIcons.email,
+                  onChanged: (value) {},
+                ),
               ),
-              LoginTextField(
-                hintTitle: 'Your Password',
-                icon: Icons.lock,
-                onChanged: (value) {},
+              Padding(
+                padding: EdgeInsets.only(bottom: 8.0),
+                child: LoginTextField(
+                  hintTitle: 'Your Password',
+                  icon: Icons.lock,
+                  onChanged: (value) {},
+                ),
               ),
               MaterialButton(
                 shape: RoundedRectangleBorder(

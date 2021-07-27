@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/consts/theme_data.dart';
 import 'package:shop_app/pages/bottom_nav_bar_page.dart';
-import 'features/login/presentation/pages/login_page.dart';
+import 'features/authentication/presentation/pages/login_page.dart';
 
 void main() {
   runApp(MyApp());

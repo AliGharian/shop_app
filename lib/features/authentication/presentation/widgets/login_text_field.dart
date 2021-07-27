@@ -21,6 +21,9 @@ class LoginTextField extends StatelessWidget {
           icon,
         ),
         prefixText: ' ',
+        helperStyle: TextStyle(
+          color: Colors.red,
+        ),
       ),
       onChanged: onChanged,
     );
