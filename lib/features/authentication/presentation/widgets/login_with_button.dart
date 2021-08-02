@@ -5,13 +5,13 @@ class LoginWithButton extends StatelessWidget {
   final String title;
   final IconData icon;
   final Color iconColor;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   const LoginWithButton({
     required this.size,
     required this.title,
     required this.icon,
     required this.iconColor,
-    required this.onPressed,
+    this.onPressed,
   });
 
   @override
@@ -23,6 +23,7 @@ class LoginWithButton extends StatelessWidget {
           Radius.circular(5.0),
         ),
       ),
+      disabledTextColor: Colors.grey.shade100,
       elevation: 5.0,
       minWidth: size.width,
       height: 50.0,
