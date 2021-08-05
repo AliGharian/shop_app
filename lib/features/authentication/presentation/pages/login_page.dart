@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/authentication/data/repositories/auth_repository.dart';
+import 'package:shop_app/features/authentication/data/repositories/auth_repository_empl.dart';
 import 'package:shop_app/features/authentication/presentation/logic/form_submission_state.dart';
 import 'package:shop_app/features/authentication/presentation/logic/login_bloc.dart';
 import 'package:shop_app/features/authentication/presentation/logic/login_event.dart';
@@ -18,18 +18,20 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return RepositoryProvider(
-      create: (context) => AuthRepository(),
+      create: (context) => AuthRepositoryEmpl(),
       child: Scaffold(
         backgroundColor: Colors.white,
         body: BlocProvider<LoginBloc>(
           create: (context) => LoginBloc(
-            authRepo: context.read<AuthRepository>(),
+            authRepo: context.read<AuthRepositoryEmpl>(),
           ),
           child: BlocListener<LoginBloc, LoginState>(
             listener: (context, state) {
               final formState = state.formState;
               if (formState is SubmissionFailed) {
                 _showSnackBar(context, formState.exception.toString());
+              } else if (formState is SubmissionSuccess) {
+                Navigator.pushNamed(context, 'home');
               }
             },
             child: SingleChildScrollView(
@@ -189,7 +191,9 @@ class LoginPage extends StatelessWidget {
                         children: [
                           Text("Don't have a account? "),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushNamed(context, 'signUp');
+                            },
                             child: Text(
                               'Register',
                               style: TextStyle(

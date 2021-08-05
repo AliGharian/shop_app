@@ -15,7 +15,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: Styles.themData(false, context),
       //home: BottomNavBarPage(),
-      home: LoginPage(),
+      routes: {
+        '/': (context) => LoginPage(),
+        'home': (context) => BottomNavBarPage(),
+        'login': (context) => LoginPage(),
+        'signUp': (context) => BottomNavBarPage(),
+      },
     );
   }
 }

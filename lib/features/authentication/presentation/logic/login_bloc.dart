@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/authentication/data/repositories/auth_repository.dart';
+import 'package:shop_app/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:shop_app/features/authentication/presentation/logic/form_submission_state.dart';
 import 'package:shop_app/features/authentication/presentation/logic/login_event.dart';
 import 'package:shop_app/features/authentication/presentation/logic/login_state.dart';
@@ -65,7 +65,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
         try {
           //todo: should hand the return value of this funtion
-          await authRepo.login();
+          await authRepo.login(
+            email: state.email,
+            password: state.password,
+          );
           yield state.copyWith(
             formState: SubmissionSuccess(),
           );
