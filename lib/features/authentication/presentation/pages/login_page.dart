@@ -10,6 +10,7 @@ import 'package:shop_app/features/authentication/presentation/widgets/form_butto
 import 'package:shop_app/features/authentication/presentation/widgets/form_text_field.dart';
 import 'package:shop_app/features/authentication/presentation/widgets/login_with_button.dart';
 import 'package:shop_app/features/authentication/presentation/widgets/single_line.dart';
+import 'package:shop_app/core/util_functions.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class LoginPage extends StatelessWidget {
             listener: (context, state) {
               final formState = state.formState;
               if (formState is SubmissionFailed) {
-                _showSnackBar(context, formState.exception.toString());
+                showSnackBar(context, formState.exception.toString());
               } else if (formState is SubmissionSuccess) {
                 Navigator.pushNamed(context, 'home');
               }
@@ -46,8 +47,7 @@ class LoginPage extends StatelessWidget {
                     Image(
                       width: 100,
                       height: 100,
-                      image: NetworkImage(
-                          'https://cdn.statically.io/img/cdn6.aptoide.com/split-store/d1cba38ca74462bd5a62457f9ec77e85_icon.png'),
+                      image: AssetImage('assets/images/shop_logo.png'),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -214,10 +214,4 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
-}
-
-//todo: should move to a correct directory
-void _showSnackBar(BuildContext context, String message) {
-  final snackBar = SnackBar(content: Text(message.toString()));
-  ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/consts/theme_data.dart';
+import 'package:shop_app/features/authentication/presentation/pages/splash_page.dart';
 import 'package:shop_app/pages/bottom_nav_bar_page.dart';
 import 'features/authentication/presentation/pages/login_page.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: Styles.themData(false, context),
       //home: BottomNavBarPage(),
       routes: {
-        '/': (context) => LoginPage(),
+        '/': (context) => SplashPage(),
         'home': (context) => BottomNavBarPage(),
         'login': (context) => LoginPage(),
         'signUp': (context) => BottomNavBarPage(),
