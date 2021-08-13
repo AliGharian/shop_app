@@ -11,7 +11,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   bool validateEmailAddress(String email) {
     String pattern =
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
-    RegExp emailRegEx = new RegExp(pattern);
+    RegExp emailRegEx = RegExp(pattern);
 
     if (!emailRegEx.hasMatch(email)) {
       return false;
@@ -28,7 +28,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   bool validatePassword(String password) {
     String pattern =
         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-    RegExp passRegEx = new RegExp(pattern);
+    RegExp passRegEx = RegExp(pattern);
 
     if (!passRegEx.hasMatch(password)) {
       return false;

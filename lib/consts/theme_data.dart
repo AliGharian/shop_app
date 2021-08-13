@@ -5,7 +5,7 @@ class Styles {
     return ThemeData(
       primaryColorDark: Colors.black,
       scaffoldBackgroundColor:
-          isDarkTheme ? Colors.black : Colors.grey.shade300,
+          isDarkTheme ? Colors.black : Colors.white,
       primarySwatch: Colors.red, // this is the main color of the app
       primaryColor: isDarkTheme
           ? Colors.black

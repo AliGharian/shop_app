@@ -21,7 +21,6 @@ class LoginPage extends StatelessWidget {
     return RepositoryProvider(
       create: (context) => AuthRepositoryEmpl(),
       child: Scaffold(
-        backgroundColor: Colors.white,
         body: BlocProvider<LoginBloc>(
           create: (context) => LoginBloc(
             authRepo: context.read<AuthRepositoryEmpl>(),
@@ -64,7 +63,7 @@ class LoginPage extends StatelessWidget {
                       child: Text(
                         'Sign in to continue',
                         style: TextStyle(
-                          fontWeight: FontWeight.w100,
+                          fontWeight: FontWeight.w300,
                           fontSize: 12.0,
                         ),
                       ),
@@ -77,6 +76,8 @@ class LoginPage extends StatelessWidget {
                             hintTitle: 'Your Email',
                             helperText: state.emailHelper,
                             icon: CustomIcons.email,
+                            keyboardType: TextInputType.emailAddress,
+                            textInputAction: TextInputAction.next,
                             readOnly: state.formState is SubmittingState
                                 ? true
                                 : false,
@@ -96,6 +97,9 @@ class LoginPage extends StatelessWidget {
                             hintTitle: 'Your Password',
                             helperText: state.passwordHelper,
                             icon: Icons.lock,
+                            keyboardType: TextInputType.visiblePassword,
+                            textInputAction: TextInputAction.done,
+                            obscure: true,
                             readOnly: state.formState is SubmittingState
                                 ? true
                                 : false,
@@ -189,7 +193,7 @@ class LoginPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Don't have a account? "),
+                          Text("Don't have an account? "),
                           InkWell(
                             onTap: () {
                               Navigator.pushNamed(context, 'signUp');

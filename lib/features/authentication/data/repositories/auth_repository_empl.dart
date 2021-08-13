@@ -11,4 +11,19 @@ class AuthRepositoryEmpl implements AuthRepository {
     if (email == 'email@email.com' && password == 'Password007#')
       throw Exception('failed login!');
   }
+
+  @override
+  Future<void> signUp({
+    required String fullName,
+    required String email,
+    required String password,
+  }) async {
+    //todo: should replace with valid function
+    await Future.delayed(Duration(seconds: 3));
+    if (fullName == 'user' &&
+        email == 'email@email.com' &&
+        password == 'Password007#') {
+      throw Exception('failed signUp!');
+    }
+  }
 }

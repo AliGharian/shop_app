@@ -3,4 +3,10 @@ abstract class AuthRepository {
     required String email,
     required String password,
   }) async {}
+
+  Future<void> signUp({
+    required String fullName,
+    required String email,
+    required String password,
+  }) async {}
 }
